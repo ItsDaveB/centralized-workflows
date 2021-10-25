@@ -7,12 +7,7 @@ on:
         description: 'A username passed from the caller workflow'
         default: 'Dave'
         required: false
-        type: string
-
-defaults:
-  run:
-    working-directory: react-boilerplate
-    
+        type: string    
 jobs:
   lint-code:
     name: Liunt Code
