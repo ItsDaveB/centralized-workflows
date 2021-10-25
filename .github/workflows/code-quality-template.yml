@@ -22,7 +22,7 @@ jobs:
       run: yarn
       
     - name: Run ESLint
-      run: yarn run eslint
+      run: yarn run eslint src/*
       
     - name: Audit Packages
       run: yarn audit
