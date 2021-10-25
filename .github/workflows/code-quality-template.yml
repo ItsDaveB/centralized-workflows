@@ -9,12 +9,14 @@ on:
         type: string
 jobs:
   lint-code:
-    name: Liunt Code
+    name: Lint Code
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        run: yarn build
-        working-directory: react-boilerplate
-
-      - name: Lint code
-        run: yarn eslint
+    
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+      
+    - name: Run ESLint
+      run: eslint . --ext .js,.jsx,.ts,.tsx
+    
