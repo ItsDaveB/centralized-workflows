@@ -8,6 +8,11 @@ on:
         default: 'Dave'
         required: false
         type: string
+
+defaults:
+  run:
+    working-directory: react-boilerplate
+    
 jobs:
   lint-code:
     name: Liunt Code
