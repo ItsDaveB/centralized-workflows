@@ -3,11 +3,10 @@ name: Code Quality
 on:
   workflow_call:
     inputs:
-      username:
-        description: 'A username passed from the caller workflow'
-        default: 'Dave'
-        required: false
-        type: string    
+      project-directory: 
+        description: 'The directory of the project'
+        required: true
+        type: string
 jobs:
   lint-code:
     name: Liunt Code
