@@ -3,7 +3,7 @@ name: Code Quality
 on:
   workflow_call:
     inputs:
-      project-directory: 
+      working-directory: 
         description: 'The folder of the project'
         required: true
         type: string
