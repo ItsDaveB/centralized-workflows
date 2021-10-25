@@ -11,7 +11,7 @@ jobs:
   code-quality-checks:
     defaults:
       run:
-        working-directory: ./${{ inputs.project-directory }}
+        working-directory: ./${{ inputs.working-directory }}
         
     name: Lint Code
     runs-on: ubuntu-latest
