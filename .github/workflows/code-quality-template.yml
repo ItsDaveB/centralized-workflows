@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Build
         run: yarn build
+        working-directory: react-boilerplate
 
       - name: Lint code
         run: yarn eslint
