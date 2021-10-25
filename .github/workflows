@@ -1,6 +1,4 @@
-20 lines (18 sloc)  396 Bytes
-   
-name: Code Quality
+ name: Code Quality
 
 on:
   workflow_call:
