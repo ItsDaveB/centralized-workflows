@@ -8,19 +8,22 @@ on:
         required: true
         type: string
 jobs:
-  lint-code:
+  code-quality-checks:
     defaults:
       run:
         working-directory: ./${{ inputs.project-directory }}
         
     name: Lint Code
     runs-on: ubuntu-latest
-    steps:
     
+    steps:  
     - uses: actions/checkout@v2
     - name: Install modules
       run: yarn
       
     - name: Run ESLint
       run: yarn run eslint
-    
+      
+    - name: Audit packages
+      run: yarn audit
+      continue-on-error: false
