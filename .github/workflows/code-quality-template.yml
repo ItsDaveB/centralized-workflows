@@ -26,6 +26,6 @@ jobs:
       run: yarn lint
       continue-on-error: false
       
-    - name: Audit Packages
-      run: yarn audit
-      continue-on-error: false
+#    - name: Audit Packages
+#      run: yarn audit
+#      continue-on-error: false
