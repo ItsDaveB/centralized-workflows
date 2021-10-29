@@ -23,7 +23,7 @@ jobs:
       continue-on-error: false
       
     - name: Run ESLint
-      run: yarn run eslint src/*
+      run: yarn run eslint
       continue-on-error: false
       
     - name: Audit Packages
