@@ -20,12 +20,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install modules
       run: yarn
-      continue-on-error: false
       
     - name: Run ESLint
       run: yarn lint
-      continue-on-error: false
       
-#    - name: Audit Packages
-#      run: yarn audit
-#      continue-on-error: false
+    - name: Audit Packages
+      run: yarn audit
