@@ -13,11 +13,6 @@ on:
         required: false
         default: "16"
         type: string
-      build-script:
-        description: "Build script command"
-        required: false
-        default: "yarn install && yarn run build"
-        type: string
       lhci-version:
         description: "Lighthouse CI CLI Version"
         required: false
