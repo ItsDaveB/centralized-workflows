@@ -1,0 +1,60 @@
+name: Lighthouse CI
+
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        description: "Working Directory for the Lighthouse CI"
+        required: false
+        default: "."
+        type: string
+      node-version:
+        description: "Node.js Version"
+        required: false
+        default: "16"
+        type: string
+      build-script:
+        description: "Build script command"
+        required: false
+        default: "yarn install && yarn run build"
+        type: string
+      lhci-version:
+        description: "Lighthouse CI CLI Version"
+        required: false
+        default: "0.13.x"
+        type: string
+      lighthouserc-path:
+        description: "Path to lighthouserc.yml"
+        required: true
+        type: string
+
+jobs:
+  lighthouse-ci-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Install dependencies and build
+        run: |
+          ${{ inputs.build-script }}
+
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@${{ inputs.lhci-version }}
+          lhci autorun --config=${{ inputs.lighthouserc-path }}
+
+      - name: Archive Lighthouse Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-results
+          path: .lighthouseci/*
+
+      - name: Convert JSON to Markdown and Add to Job Summary
+        run: |
+          node ./lighthouse/lighthouseResultsToMarkdown.js >> $GITHUB_STEP_SUMMARY
