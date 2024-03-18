@@ -41,7 +41,8 @@ jobs:
 
       - name: Install dependencies and build
         run: |
-          ${{ inputs.build-script }}
+          yarn install
+          yarn run build
 
       - name: Run Lighthouse CI
         run: |
