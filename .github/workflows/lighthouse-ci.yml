@@ -11,7 +11,7 @@ on:
       node-version:
         description: "Node.js Version"
         required: false
-        default: "16"
+        default: "14.x || 16.x || 18.x"
         type: string
       lhci-version:
         description: "Lighthouse CLI Version"
@@ -21,6 +21,11 @@ on:
       lighthouserc-path:
         description: "Path to lighthouserc.yml"
         required: true
+        type: string
+      build-command:
+        description: "Build Command"
+        required: false
+        default: "yarn run build"
         type: string
 
 jobs:
@@ -33,11 +38,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node-version }}
+          cache: 'yarn'
 
-      - name: Install dependencies and build
-        run: |
-          yarn install
-          yarn run build
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build Project
+        run: ${{ inputs.build-command }}
 
       - name: Run Lighthouse CI
         run: |
@@ -46,11 +53,13 @@ jobs:
 
       - name: Archive Lighthouse Results
         uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && steps.lighthouse-ci-audit.outcome == 'success'
         with:
           name: lighthouse-results
           path: .lighthouseci/*
 
       - name: Convert JSON to Markdown and Add to Job Summary
         run: |
-          node ./lighthouse/lighthouseResultsToMarkdown.js >> $GITHUB_STEP_SUMMARY
+          node ${{ inputs.results-summary-script }} >> $GITHUB_STEP_SUMMARY
+        env:
+          RESULTS_SUMMARY_SCRIPT: ${{ inputs.results-summary-script }}
