@@ -4,7 +4,7 @@ on:
   workflow_call:
     inputs:
       working-directory:
-        description: "Working Directory for the Lighthouse CI"
+        description: "Working Directory for the Lighthouse Audit"
         required: false
         default: "."
         type: string
@@ -14,7 +14,7 @@ on:
         default: "16"
         type: string
       lhci-version:
-        description: "Lighthouse CI CLI Version"
+        description: "Lighthouse CLI Version"
         required: false
         default: "0.13.x"
         type: string
