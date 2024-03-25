@@ -42,7 +42,7 @@ The workflow contains a job named `lighthouse-ci-audit`, which executes the foll
 
 ## `lighthouserc.yml` Configuration Example
 
-The `lighthouserc.yml` file configures the Lighthouse CI workflow. Below is an example of this configuration file that you can use as a starting point for your project:
+The `lighthouserc.yml` file configures the Lighthouse CI workflow and allows configuration to be applied to the audit. Below is an example of this configuration file that you can use as a starting point for your project:
 
 ```yaml
 ci:
