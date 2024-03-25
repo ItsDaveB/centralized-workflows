@@ -42,7 +42,9 @@ jobs:
         run: yarn install
 
       - name: Build Project
-        run: ${{ inputs.build-command }}
+        run: |
+          yarn install
+          yarn run build
 
       - name: Run Lighthouse CI
         run: |
