@@ -6,6 +6,11 @@ The **Lighthouse CI** reusable workflow integrates Google's Lighthouse performan
 ## Inputs
 The workflow accepts several inputs to customize the Lighthouse audit according to your project needs:
 
+### `lighthouserc-path`
+- **Description**: Path to `lighthouserc.yml`.
+- **Required**: Yes.
+- **Type**: String.
+
 ### `working-directory`
 - **Description**: Working Directory for the Lighthouse Audit.
 - **Required**: No.
@@ -22,11 +27,6 @@ The workflow accepts several inputs to customize the Lighthouse audit according 
 - **Description**: Lighthouse CLI Version.
 - **Required**: No.
 - **Default**: `"0.13.x"`.
-- **Type**: String.
-
-### `lighthouserc-path`
-- **Description**: Path to `lighthouserc.yml`.
-- **Required**: Yes.
 - **Type**: String.
 
 ## Jobs
