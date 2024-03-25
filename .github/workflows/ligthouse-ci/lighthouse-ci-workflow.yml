@@ -22,7 +22,10 @@ on:
         description: "Path to lighthouserc.yml"
         required: true
         type: string
-
+      results-summary-script:
+        description: "Path to the results summary script"
+        required: false
+        type: string
 jobs:
   lighthouse-ci-audit:
     runs-on: ubuntu-latest
