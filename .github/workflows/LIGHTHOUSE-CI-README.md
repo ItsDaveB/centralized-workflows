@@ -38,7 +38,7 @@ The workflow contains a job named `lighthouse-ci-audit`, which executes the foll
 4. **Build Project**: Runs the build process for your project based on the provided build command.
 5. **Run Lighthouse CI**: Installs the Lighthouse CLI and executes the audit as per the configuration in `lighthouserc.yml`.
 6. **Archive Lighthouse Results**: Uploads the Lighthouse audit results as an artifact, available for download if the audit is successful.
-7. **Convert JSON to Markdown and Add to Job Summary**: Converts the Lighthouse audit results from JSON to Markdown and appends them to the job summary. This requires a script path to be provided in `results-summary-script`.
+7. **Add Markdown To Job Summary**: Runs a custom script, that expects markdown to be returned, this then adds it to the job summary. This requires a script path to be provided in `results-summary-script`.
 
 ## `lighthouserc.yml` Configuration Example
 
