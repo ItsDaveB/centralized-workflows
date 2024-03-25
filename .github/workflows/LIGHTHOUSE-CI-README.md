@@ -78,7 +78,8 @@ ci:
       - performance
       - accessibility
       - best-practices
-      - seo```
+      - seo
+```
 
 ## Further Configuration and Advanced Options
 
