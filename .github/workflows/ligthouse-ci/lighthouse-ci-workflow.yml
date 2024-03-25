@@ -22,11 +22,6 @@ on:
         description: "Path to lighthouserc.yml"
         required: true
         type: string
-      build-command:
-        description: "Build Command"
-        required: false
-        default: "yarn run build"
-        type: string
 
 jobs:
   lighthouse-ci-audit:
