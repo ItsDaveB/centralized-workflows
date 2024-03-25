@@ -29,12 +29,6 @@ The workflow accepts several inputs to customize the Lighthouse audit according 
 - **Required**: Yes.
 - **Type**: String.
 
-### `build-command`
-- **Description**: Build Command.
-- **Required**: No.
-- **Default**: `"yarn run build"`.
-- **Type**: String.
-
 ## Jobs
 The workflow contains a job named `lighthouse-ci-audit`, which executes the following steps:
 
