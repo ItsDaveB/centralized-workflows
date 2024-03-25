@@ -38,9 +38,6 @@ jobs:
           node-version: ${{ inputs.node-version }}
           cache: 'yarn'
 
-      - name: Install dependencies
-        run: yarn install
-
       - name: Build Project
         run: |
           yarn install
