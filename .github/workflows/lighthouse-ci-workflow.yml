@@ -58,7 +58,7 @@ jobs:
           name: lighthouse-results
           path: .lighthouseci/*
 
-      - name: Convert JSON to Markdown and Add to Job Summary
+      - name: Add Markdown To Job Summary
         run: |
           node ${{ inputs.results-summary-script }} >> $GITHUB_STEP_SUMMARY
         env:
