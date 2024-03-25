@@ -40,14 +40,45 @@ The workflow contains a job named `lighthouse-ci-audit`, which executes the foll
 6. **Archive Lighthouse Results**: Uploads the Lighthouse audit results as an artifact, available for download if the audit is successful.
 7. **Convert JSON to Markdown and Add to Job Summary**: Converts the Lighthouse audit results from JSON to Markdown and appends them to the job summary. This requires a script path to be provided in `results-summary-script`.
 
-## Integration
-To integrate this workflow into your project:
+## `lighthouserc.yml` Configuration Example
 
-- Define the workflow in a `.yml` file within the `.github/workflows` directory of your repository.
-- Customize the inputs as needed, ensuring that `lighthouserc-path` is correctly specified.
-- Trigger the workflow as part of your CI process to automatically run Lighthouse audits.
+The `lighthouserc.yml` file configures the Lighthouse CI workflow. Below is an example of this configuration file that you can use as a template for your project:
 
-This workflow facilitates continuous performance and SEO checks, keeping your web project optimized and up to standards.
+```yaml
+ci:
+  collect:
+    numberOfRuns: 2
+    startServerCommand: yarn start
+    url:
+      - http://localhost:3000
+      - http://localhost:3000
+  assert:
+    includePassedAssertions: true
+    assertions:
+      "categories:performance":
+        - warn
+        - minScore: 1.0
+      "categories:accessibility":
+        - warn
+        - minScore: 0.99
+      "categories:best-practices":
+        - warn
+        - minScore: 0.95
+      "categories:seo":
+        - warn
+        - minScore: 1.0
+  upload:
+    target: filesystem
+    outputDir: ./lighthouseci
+  settings:
+    chromeFlags:
+      - --ignore-certificate-errors
+    preset: desktop
+    onlyCategories:
+      - performance
+      - accessibility
+      - best-practices
+      - seo```
 
 ## Further Configuration and Advanced Options
 
