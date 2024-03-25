@@ -1,7 +1,7 @@
 # Lighthouse CI Workflow Documentation
 
 ## Overview
-The **Lighthouse CI** workflow integrates Google's Lighthouse performance and SEO auditing tool into your GitHub Actions, allowing automated running of Lighthouse audits on your projects. This reusable workflow streamlines performance checks, ensuring that your website maintains high standards for speed, accessibility, and SEO.
+The **Lighthouse CI** reusable workflow integrates Google's Lighthouse performance and SEO auditing tool into your GitHub Actions, allowing automated running of Lighthouse audits on your projects. This reusable workflow streamlines performance checks, ensuring that your website maintains high standards for speed, accessibility, and SEO.
 
 ## Inputs
 The workflow accepts several inputs to customize the Lighthouse audit according to your project needs:
