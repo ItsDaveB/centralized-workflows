@@ -82,6 +82,6 @@ ci:
 
 ## Further Configuration and Advanced Options
 
-For a deeper understanding and more advanced configuration options of the `lighthouserc.yml` file, we recommend referring to the official Lighthouse CI documentation. This resource provides in-depth information on a wide range of settings and customization options that you can leverage to tailor the Lighthouse CI workflow to your project's specific needs.
+For a deeper understanding and more advanced configuration options of the `lighthouserc.yml` file, you can refer to the official Lighthouse CI documentation. This resource provides in-depth information on a wide range of settings and customization options that you can leverage to tailor the Lighthouse CI workflow to your project's specific needs.
 
 Access the complete Lighthouse CI configuration documentation here: [Lighthouse CI Configuration](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/configuration.md).
