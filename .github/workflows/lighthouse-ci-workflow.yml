@@ -44,13 +44,14 @@ jobs:
           yarn run build
 
       - name: Run Lighthouse CI
+        id: lhci-audit
         run: |
           npm install -g @lhci/cli@${{ inputs.lhci-version }}
           lhci autorun --config=${{ inputs.lighthouserc-path }}
 
       - name: Archive Lighthouse Results
         uses: actions/upload-artifact@v4
-        if: always() && steps.lighthouse-ci-audit.outcome == 'success'
+        if: always() && steps.lhci-audit.outcome == 'success'
         with:
           name: lighthouse-results
           path: .lighthouseci/*
