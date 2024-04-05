@@ -1,7 +1,13 @@
 # Lighthouse CI Workflow Documentation
 
 ## Overview
-The **Lighthouse CI** reusable workflow integrates Google's Lighthouse performance and SEO auditing tool into your GitHub Actions, allowing automated running of Lighthouse audits on your projects. This reusable workflow streamlines performance checks, ensuring that your website maintains high standards for speed, accessibility, and SEO.
+The **Lighthouse CI** reusable workflow integrates Google's Lighthouse performance and SEO auditing tool into your GitHub Actions, allowing automated running of Lighthouse audits on your projects. This reusable workflow streamlines performance checks, ensuring that your website maintains high standards for speed, accessibility, and SEO.  The results are outputted to the Job summary as markdown, and also uploaded as an artifact so you can access the full audit.
+
+## Job Summary Preview
+![image](https://github.com/dpbeaumont/centralized-workflows/assets/49551821/5f13183a-99fc-4482-a85a-188c07f4f16d)
+
+## Full Audit Report Artifact Preview
+![image](https://github.com/dpbeaumont/centralized-workflows/assets/49551821/c991bec2-6c44-4f62-bf97-6a16b9df14dc)
 
 ## Inputs
 The workflow accepts several inputs to customize the Lighthouse audit according to your project needs:
