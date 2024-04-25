@@ -6,6 +6,7 @@ on:
       lighthouserc-path:
         description: "Path to lighthouserc.yml"
         required: true
+        default: "lighthouse/lighthouserc.yml"
         type: string
       working-directory:
         description: "Working Directory for the Lighthouse Audit"
