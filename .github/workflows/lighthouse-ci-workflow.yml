@@ -1,9 +1,6 @@
 name: Lighthouse CI Reusable Workflow
 
 on:
-  pull_request:
-    branches:
-      - main
   workflow_call:
     inputs:
       lighthouserc-path:
